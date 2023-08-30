@@ -5,6 +5,7 @@ import 'package:quiz_test_flutter/model/model_quiz.dart';
 import 'package:quiz_test_flutter/screen/screen_result.dart';
 import 'package:quiz_test_flutter/widget/widget_candidate.dart';
 
+// ignore: must_be_immutable
 class QuizScreen extends StatefulWidget {
   List<Quiz> quizs;
   QuizScreen({super.key, required this.quizs});
@@ -13,7 +14,7 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  List<int> _answers = [-1, -1, -1];
+  List<int> _answers = [-1, -1, -1, -1];
   List<bool> _answerState = [false, false, false, false];
   int _currentIndex = 0;
 
