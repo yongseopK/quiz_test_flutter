@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_test_flutter/model/model_quiz.dart';
+import 'package:quiz_test_flutter/screen/screen_quiz.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -8,6 +10,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<Quiz> quizs = [
+    Quiz.fromMap({
+      'title': 'test',
+      'candidates': ['a', 'b', 'c', 'd'],
+      'answer': 0
+    }),
+    Quiz.fromMap({
+      'title': 'test',
+      'candidates': ['a', 'b', 'c', 'd'],
+      'answer': 0
+    }),
+    Quiz.fromMap({
+      'title': 'test',
+      'candidates': ['a', 'b', 'c', 'd'],
+      'answer': 0
+    }),
+  ];
   @override
   Widget build(BuildContext context) {
     // 사용자의 화면 크기에 따른 높이 너비 설정
@@ -68,7 +87,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.deepPurple),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => QuizScreen(
+                          quizs: quizs,
+                        ),
+                      ),
+                    );
+                  },
                   child: const Text(
                     '지금 퀴즈 풀기',
                     style: TextStyle(color: Colors.white),
