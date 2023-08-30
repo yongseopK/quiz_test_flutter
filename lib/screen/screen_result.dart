@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_test_flutter/model/model_quiz.dart';
 import 'package:quiz_test_flutter/screen/screen_home.dart';
 
+// ignore: must_be_immutable
 class ResultScreen extends StatelessWidget {
   List<int> answers;
   List<Quiz> quizs;
